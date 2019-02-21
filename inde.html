@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>learning jquery</title>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            Q1();
+            Q2();
+            Q3();
+            Q4();
+            Q5();
+            Q6();
+            Q7();
+            Q8();
+            Q9();
+            Q10();
+            Q11();
+            Q12();
+            Q13();
+            Q14();
+
+        });
+        function Q1() {
+         console.log("hello world!")
+        }
+        function Q2() {
+
+            $("#btn1").click(function () {
+                $("#test").addClass("load");
+            });
+        }
+        function Q3() {
+          $("#btn2").click(function () {
+              $("div[class$=new]").css("color","red");
+          })
+        }
+        function Q4() {
+            $("#btn3").click(function () {
+                $("#btn3").attr("disabled",true);
+            })
+        }
+        function Q5() {
+            $("#btn5").click(function () {
+                $("#main").children(".target").css("font-size","20px");
+            })
+        }
+        function Q6() {
+            $("#btn6").click(function () {
+                var p=$("div#page1").text();
+                $("#page2").replaceWith(p);
+            })
+
+        }
+        function Q7() {
+                $(".click").click(function () {
+                    $(".click").after(" <button class=\".click\">click me</button>");
+                })
+
+        }
+        function Q8() {
+            // $("#btn8").click(function () {
+
+            $('.elementClass').on('click', function() {
+                this.innerHTML="after clicking"
+            });
+            // })
+        }
+        function Q9() {
+                $("#pick").change(function() {
+                    var val1 = $('#pick option:selected').val();
+                    $("#div1").append(val1);
+            })
+
+        }
+        function Q10() {
+            $("#menu li").hover(function(){
+                $(".dropdown-menu", this).slideDown(100);
+            }, function(){
+                $(".dropdown-menu", this).stop().slideUp(100);
+            });
+        }
+        function Q11() {
+            $("#google").click( function (e) {
+                e.preventDefault();
+            });
+
+        }
+        function Q12() {
+            $("#parentclick").click(function () {
+                alert("hello all!!!");
+            });
+
+            $(".childclick").click(function () {
+                $("#parentclick").prop("disabled",true);
+            });
+        }
+        function Q13() {
+
+        }
+        function Q14() {
+            $("#colorchange").click(function () {
+                $("#qw tr").each(function() {
+                    var customerId = $(this).find(".num").html();
+                    if(customerId>10)
+                        $(this).css("background-color","aquamarine");
+                });
+// console.log($( "tr td .num" ).text);
+            });
+        }
+    </script>
+    <style>
+        .load{
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h4>1. Console "Hello Word" in document.ready function. </h4>
+    <input type="button" onclick="Q1()" value="Question1"/>
+    <hr>
+
+
+    <h4>2.Select a ID name "#test" and add class "load" when DOM is loaded.</h4>
+    <p id="test">question 2</p>
+    <div class="newer1">welcome to newers world1..</div>
+    <button id="btn1" onclick="Q2()"> add class</button>
+    <hr>
+
+    <h4>3.Change the color of element which class name end with "-new"</h4>
+    <div class="1new">welcome to newers world1..</div>
+    <div class="2new">welcome to newers world2..</div>
+    <div class="new3">welcome to newers world3...</div>
+    <div class="rnee">welcome to newer world 4..</div>
+    <button id="btn2" onclick="Q3()">Show changes</button>
+    <hr>
+
+    <h4>Disable submit button using jquery attr method.</h4>
+    <button id="btn3" onclick="Q4()" value="Submit">Submit </button>
+    <hr>
+
+    <h4>5. Change the font size of ".target" which has parent element with id name "#main" </h4>
+    <div id="main">Parent element
+        <div class="target">It is the child of div with id main... </div>
+        <div class="target1">No any change in it...</div>
+        <button id="btn5" onclick="Q5()">click to change font"</button>
+    </div><hr>
+
+    <h4>6.After page load change the HTML of div element with "p" element</h4>
+    <div id="page1">this is div element</div>
+    <p id="page2">this is p element</p>
+    <button id="btn6" onclick="Q6()">Reload</button>
+    <hr>
+
+    <h4>7. Bind a click function to an "click" element and append next "click" next to it.</h4>
+    <button class="click">click me</button>
+    <hr>
+
+    <h4>8.Click event not working on element which added dynamicly or via script, make it work using .on method</h4>
+    <button class="elementClass">Clicked using on</button>
+    <hr>
+
+    <h4>9.Get dropdown selected value on onchanage event and append in div container</h4>
+    <h5>click on start button to active the link.</h5>
+    <div>
+        <select id="pick">
+            <option value="">Select one...</option>
+            <option value="first">first</option>
+            <option value="second">second</option>
+            <option value="third">third</option>
+            <option value="four">fourth</option>
+        </select>
+    </div>
+    <div id="div1"></div>
+    <hr>
+
+    <h4>10. Create a dropdown menu using hover method in jquery.</h4>
+    <div id="menu">
+        <ul>
+            <li><a href="#">Link</a>
+                <ul class="dropdown-menu">
+                    <li><a href="#">Dropdown Link</a></li>
+                    <li><a href="#">next link</a></li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+    <hr>
+
+    <h4>11.On clicking on "google" tag. It is taking us to google home page. Stop it from happening.</h4>
+    <a id="google" href="www.google.com">
+        google
+    </a>
+    <hr>
+
+    <h4>12. We have bind a click funtion to parent div but we want stop it
+    from performing when user clicks on its child li</h4>
+    <div>
+        <button id="parentclick">parent button</button>
+        <div>
+            <ul>
+                <li><button class="childclick">child li</button></li>
+                <li><button class="childclick">child li</button></li>
+                <li><button class="childclick">child li</button></li>
+                <li><button class="childclick">child li</button></li>
+            </ul>
+        </div>
+    </div>
+    <hr>
+
+    <h4>13. Get the max height of elements using jquery each method.</h4>
+    <table id="qw">
+        <tr>
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Number</th>
+        </tr>
+        <tr>
+            <td>1</td>
+            <td>Dolly</td>
+            <td>1000</td>
+            <td class="num">12</td>
+        </tr>
+        <tr>
+            <td>2</td>
+            <td>pallavi</td>
+            <td>2000</td>
+            <td class="num">9</td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>anuja</td>
+            <td>3000</td>
+            <td class="num">10</td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>mishra</td>
+            <td>4000</td>
+            <td class="num">14</td>
+        </tr>
+    </table>
+    <button id="colorchange">Change Color</button>
+
+
+</body>
+    </html>
