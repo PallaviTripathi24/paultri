@@ -1,0 +1,81 @@
+1.Sign up page not available on My Account page
+Precondition :
+url -http://www.rushplace.com/my-account/
+
+Step to reproduce :
+Navigate to given url
+Search for sign up or register option ,it is nowhere on the page.
+Click on My account link,it will directly navigate to login page.
+
+Actual result :
+Sign up page is not appearing anywhere on the page
+
+Expected result :
+After clicking on My account ,sign up option must be there
+
+2.Register user with blank or incomplete details
+Prerequisite:
+Launch "http://newtours.demoaut.com/mercurysignon.php" url
+
+Steps to reproduce :
+1) navigate to above given url
+2) Navigate and select the link "Register here".
+3) Enter the details to all fields.
+
+Actual Result- Blank textfields are accepted.
+
+Expected result- Blank textfields should give error message.
+blank fields are accepted at the time of registration on "http://newtours.demoaut.com/mercurysignon.php"
+
+3.Details of registered user is not showing in profile tab
+prerequisite :
+Launch "http://newtours.demoaut.com/mercurysignon.php" url with registered username 
+
+Steps to reproduce:
+1) hit the given url
+2) Navigate and sign in.
+3) Click Profile tab.
+
+Actual Result- All textfields are blank.
+
+Expected result- All textfields should have the details filled at the time of registration.
+The details of user is not visible in Profile tab.
+
+4.Filtering on the basis of high to low price is empty	
+Precondition:
+navigate to url : www.rushplace.com
+
+Steps to reproduce :
+navigate on shop home option
+  click on Default sorting drop down option
+select Sort by high to low option
+
+Actual result :
+No result for this particular sorting
+Expected result :
+Product should be displayed in high to low sorting order
+ 
+5.Search button is not working
+Steps to reproduce :
+Type something to search in search option
+click on search button
+press enter button
+
+Actual result :
+Search button is not working and searching is executed on pressing enter
+
+Expected result :
+Searching should be done b clicking on search button
+
+6.Without registration or login ,product is Adding to basket
+Steps to reproduce:
+Search the item that need to be added
+click on add in basket option
+product will be added without any validation of user
+
+Actual result :
+without sign in ,products are adding to the cart
+
+Expected result :
+for adding product to cart ,it should first ask for the user login or sign up
+
