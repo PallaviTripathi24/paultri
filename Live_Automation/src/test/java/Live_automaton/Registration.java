@@ -7,9 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.annotations.BeforeSuite;
-import org.testng.annotations.BeforeTest;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -34,7 +32,7 @@ public class Registration  {
         return prop;
     }
 //    Registration functionality test
-@Test
+@BeforeClass
     public void Registration () throws IOException {
 //        WebDriver driver=driver();
 
@@ -57,7 +55,7 @@ public class Registration  {
     }
 
 //    end to end test case
-    @Test()
+    @BeforeMethod
     public void login() throws IOException, InterruptedException {
             driver.get("http://newtours.demoaut.com/mercurywelcome.php");
             Properties prop=properties();
@@ -68,7 +66,7 @@ public class Registration  {
     }
 
     //end to end test case
-    @Test(dependsOnMethods = {"login"},priority = 2)
+    @Test(priority = 2)
 
     public void flightFind() throws IOException, InterruptedException {
 
@@ -187,7 +185,7 @@ public class Registration  {
 
 
     //******Departure and arrival city are same
-        @Test(description = "departure and arival city negative test case",dependsOnMethods = {"login"},priority = 3)
+        @Test(description = "departure and arival city negative test case",priority = 3)
         public void city() throws InterruptedException {
             driver.findElements(By.name("tripType")).get(0).click();
             //Passengers
@@ -260,7 +258,7 @@ public class Registration  {
             }
         }
 //        departure date less than arrival date test case
-    @Test(description = "Departure date should be less than arrival date ",dependsOnMethods = {"login"} ,priority = 4)
+    @Test(description = "Departure date should be less than arrival date ",priority = 4)
     public void date() throws InterruptedException {
         driver.findElement(By.xpath("//input[@value='roundtrip']")).click();
         //Passengers
@@ -326,7 +324,7 @@ public class Registration  {
 
 // empty passenger detail test case
 
-    @Test(description = "empty passengers field",dependsOnMethods = {"login"},priority = 5)
+    @Test(description = "empty passengers field",priority = 5)
 
     public void book_flight() throws IOException, InterruptedException {
         driver.findElements(By.name("tripType")).get(0).click();

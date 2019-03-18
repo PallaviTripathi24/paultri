@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Live_automaton/Registration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+            <state relative-caret-position="120">
+              <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
             </state>
           </provider>
         </entry>
@@ -43,7 +43,7 @@
         <entry file="file://$PROJECT_DIR$/testng.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="150">
-              <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+              <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
             </state>
           </provider>
         </entry>
@@ -144,7 +144,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552894478712" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552896325784" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -307,12 +307,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Registration_login - 2019.03.18 at 11h 56m 59s.xml">
-      <configuration name="Registration.login" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration - 2019.03.18 at 12h 00m 51s.xml">
-      <configuration name="Registration" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="Registration - 2019.03.18 at 12h 14m 05s.xml">
       <configuration name="Registration" configurationId="TestNG" />
     </history-entry>
@@ -336,6 +330,12 @@
     </history-entry>
     <history-entry file="Registration_flightFind - 2019.03.18 at 12h 58m 26s.xml">
       <configuration name="Registration.flightFind" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration - 2019.03.18 at 13h 05m 21s.xml">
+      <configuration name="Registration" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration - 2019.03.18 at 13h 35m 10s.xml">
+      <configuration name="Registration" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -375,13 +375,13 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/src/test/java/Live_automaton/Registration.java</url>
-          <line>41</line>
+          <line>39</line>
           <properties />
           <option name="timeStamp" value="1" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/Live_automaton/Registration.java</url>
-          <line>263</line>
+          <line>261</line>
           <properties class="Live_automaton.Registration" method="date">
             <option name="EMULATED" value="true" />
           </properties>
@@ -408,14 +408,14 @@
     <entry file="file://$PROJECT_DIR$/testng.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="150">
-          <caret line="10" column="8" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
+          <caret line="10" column="8" lean-forward="true" selection-start-line="10" selection-start-column="8" selection-end-line="10" selection-end-column="8" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Live_automaton/Registration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
+        <state relative-caret-position="120">
+          <caret line="8" column="25" lean-forward="true" selection-start-line="8" selection-start-column="25" selection-end-line="8" selection-end-column="25" />
         </state>
       </provider>
     </entry>
