@@ -68,12 +68,12 @@ public class Registration  {
     }
 
     //end to end test case
-    @Test(dependsOnMethods = {"login"},priority = 3)
+    @Test(dependsOnMethods = {"login"},priority = 2)
 
     public void flightFind() throws IOException, InterruptedException {
 
 
-        driver.findElements(By.name("tripType")).get(0).click();
+//        driver.findElements(By.name("tripType")).get(0).click();
         //Passengers
         WebElement passengers = driver.findElement(By.name("passCount"));
         Select selectpassenger = new Select(passengers);
@@ -187,7 +187,7 @@ public class Registration  {
 
 
     //******Departure and arrival city are same
-        @Test(description = "departure and arival city negative test case",dependsOnMethods = {"login"},priority = 2)
+        @Test(description = "departure and arival city negative test case",dependsOnMethods = {"login"},priority = 3)
         public void city() throws InterruptedException {
             driver.findElements(By.name("tripType")).get(0).click();
             //Passengers
@@ -326,7 +326,7 @@ public class Registration  {
 
 // empty passenger detail test case
 
-    @Test(description = "empty passengers field",dependsOnMethods = {"login"},priority = 4)
+    @Test(description = "empty passengers field",dependsOnMethods = {"login"},priority = 5)
 
     public void book_flight() throws IOException, InterruptedException {
         driver.findElements(By.name("tripType")).get(0).click();

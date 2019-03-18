@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Live_automaton/Registration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2655">
-              <caret line="3" column="58" lean-forward="true" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+            <state relative-caret-position="75">
+              <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
             </state>
           </provider>
         </entry>
@@ -144,7 +144,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552892126371" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552894478712" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -167,7 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.Registration.city">
+  <component name="RunManager" selected="TestNG.Registration">
     <configuration name="Registration" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Live_Automation" />
       <extension name="coverage">
@@ -179,24 +179,6 @@
       <option name="PACKAGE_NAME" value="Live_automaton" />
       <option name="MAIN_CLASS_NAME" value="Live_automaton.Registration" />
       <option name="TEST_OBJECT" value="CLASS" />
-      <properties />
-      <listeners />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Registration.Registration" type="TestNG" temporary="true" nameIsGenerated="true">
-      <module name="Live_Automation" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="Live_automaton.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="Live_automaton" />
-      <option name="MAIN_CLASS_NAME" value="Live_automaton.Registration" />
-      <option name="METHOD_NAME" value="Registration" />
-      <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
       <method v="2">
@@ -232,6 +214,24 @@
       <option name="PACKAGE_NAME" value="Live_automaton" />
       <option name="MAIN_CLASS_NAME" value="Live_automaton.Registration" />
       <option name="METHOD_NAME" value="date" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Registration.flightFind" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="Live_Automation" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="Live_automaton.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="Live_automaton" />
+      <option name="MAIN_CLASS_NAME" value="Live_automaton.Registration" />
+      <option name="METHOD_NAME" value="flightFind" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -278,18 +278,18 @@
     <list>
       <item itemvalue="TestNG.Unnamed" />
       <item itemvalue="TestNG.Registration" />
-      <item itemvalue="TestNG.Registration.Registration" />
       <item itemvalue="TestNG.Registration.login" />
       <item itemvalue="TestNG.Registration.city" />
       <item itemvalue="TestNG.Registration.date" />
+      <item itemvalue="TestNG.Registration.flightFind" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="TestNG.Registration" />
+        <item itemvalue="TestNG.Registration.flightFind" />
         <item itemvalue="TestNG.Registration.city" />
         <item itemvalue="TestNG.Registration.login" />
-        <item itemvalue="TestNG.Registration" />
         <item itemvalue="TestNG.Registration.date" />
-        <item itemvalue="TestNG.Registration.Registration" />
       </list>
     </recent_temporary>
   </component>
@@ -307,18 +307,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Registration_Registration - 2019.03.18 at 11h 50m 29s.xml">
-      <configuration name="Registration.Registration" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_login - 2019.03.18 at 11h 51m 41s.xml">
-      <configuration name="Registration.login" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_city - 2019.03.18 at 11h 52m 27s.xml">
-      <configuration name="Registration.city" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_date - 2019.03.18 at 11h 53m 13s.xml">
-      <configuration name="Registration.date" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="Registration_login - 2019.03.18 at 11h 56m 59s.xml">
       <configuration name="Registration.login" configurationId="TestNG" />
     </history-entry>
@@ -336,6 +324,18 @@
     </history-entry>
     <history-entry file="Registration_login - 2019.03.18 at 12h 25m 09s.xml">
       <configuration name="Registration.login" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_city - 2019.03.18 at 12h 25m 59s.xml">
+      <configuration name="Registration.city" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration - 2019.03.18 at 12h 55m 21s.xml">
+      <configuration name="Registration" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration - 2019.03.18 at 12h 57m 33s.xml">
+      <configuration name="Registration" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_flightFind - 2019.03.18 at 12h 58m 26s.xml">
+      <configuration name="Registration.flightFind" configurationId="TestNG" />
     </history-entry>
   </component>
   <component name="ToolWindowManager">
@@ -414,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Live_automaton/Registration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2655">
-          <caret line="3" column="58" lean-forward="true" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
+        <state relative-caret-position="75">
+          <caret line="5" column="38" lean-forward="true" selection-start-line="5" selection-start-column="38" selection-end-line="5" selection-end-column="38" />
         </state>
       </provider>
     </entry>
