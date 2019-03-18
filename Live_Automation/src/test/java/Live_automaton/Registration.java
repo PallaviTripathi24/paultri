@@ -1,0 +1,405 @@
+package Live_automaton;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
+import org.testng.annotations.BeforeSuite;
+import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Test;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+public class Registration  {
+    WebDriver driver;
+    @BeforeSuite
+     public WebDriver driver() throws IOException {
+        System.setProperty("webdriver.chrome.driver","/home/ttn/IdeaProjects/Live_Automation/chromedriver/chromedriver_linux64/chromedriver");
+        driver=new ChromeDriver();
+        return driver;
+    }
+        @BeforeSuite
+        public Properties properties() throws IOException {
+        Properties prop=new Properties();
+        File fp=new File("/home/ttn/IdeaProjects/Live_Automation/Properties/Registration.properties");
+        FileInputStream fileInputStream=new FileInputStream(fp);
+        prop.load(fileInputStream);
+        return prop;
+    }
+//    Registration functionality test
+@Test
+    public void Registration () throws IOException {
+//        WebDriver driver=driver();
+
+        Properties prop=properties();
+    driver.get("http://newtours.demoaut.com/mercurywelcome.php");
+    driver.findElement(By.xpath("//a[text()='REGISTER']")).click();
+    driver.findElement(By.xpath("//input[@name='firstName']")).sendKeys(prop.getProperty("FName"));
+    driver.findElement(By.xpath("//input[@name='lastName']")).sendKeys(prop.getProperty("LName"));
+    driver.findElement(By.xpath("//input[@name='phone']")).sendKeys(prop.getProperty("Phone"));
+    driver.findElement(By.xpath("//input[@name='userName']")).sendKeys(prop.getProperty("Email"));
+    driver.findElement(By.xpath("//input[@name='address1']")).sendKeys(prop.getProperty("Address"));
+    driver.findElement(By.xpath("//input[@name='address2']")).sendKeys(prop.getProperty("Address1"));
+    driver.findElement(By.xpath("//input[@name='city']")).sendKeys(prop.getProperty("City"));
+    driver.findElement(By.xpath("//input[@name='state']")).sendKeys(prop.getProperty("State"));
+    driver.findElement(By.xpath("//input[@name='postalCode']")).sendKeys(prop.getProperty("Postal"));
+    driver.findElement(By.xpath("//input[@name='email']")).sendKeys(prop.getProperty("UName"));
+    driver.findElement(By.xpath("//input[@name='password']")).sendKeys(prop.getProperty("Country"));
+    driver.findElement(By.xpath("//input[@name='confirmPassword']")).sendKeys(prop.getProperty("Pass"));
+    driver.findElement(By.xpath("//input[@name='register']")).click();
+    }
+
+//    end to end test case
+    @Test(priority = 1)
+    public void login() throws IOException, InterruptedException {
+            driver.get("http://newtours.demoaut.com/mercurywelcome.php");
+            Properties prop=properties();
+        driver.findElement(By.xpath("//input[@name='userName']")).sendKeys(prop.getProperty("UName"));
+        driver.findElement(By.xpath("//input[@name='password']")).sendKeys(prop.getProperty("Pass"));
+        driver.findElement(By.xpath("//input[@name='login']")).click();
+        String actual = driver.getCurrentUrl();
+        System.out.println(actual);
+        String expected = "http://newtours.demoaut.com/mercuryreservation.php";
+//        driver.close();
+        Assert.assertTrue(actual.contains(expected));
+        driver.findElements(By.name("tripType")).get(0).click();
+        //Passengers
+        WebElement passengers = driver.findElement(By.name("passCount"));
+        Select selectpassenger = new Select(passengers);
+        selectpassenger.selectByVisibleText("1");
+
+        //Departing
+
+        WebElement depart = driver.findElement(By.name("fromPort"));
+        Select departdrop = new Select(depart);
+
+        departdrop.selectByVisibleText("Acapulco");
+
+        //departing(date)
+        WebElement month = driver.findElement(By.name("fromMonth"));
+        WebElement day = driver.findElement(By.name("fromDay"));
+        new Select(month).selectByVisibleText("May");
+        new Select(day).selectByVisibleText("2");
+
+
+        // ARRIVING IN
+        WebElement arrive = driver.findElement(By.name("toPort"));
+        new Select(arrive).selectByVisibleText("London");
+
+        //Returning date
+        WebElement month1 = driver.findElement(By.name("toMonth"));
+        WebElement day1 = driver.findElement(By.name("toDay"));
+        new Select(month1).selectByVisibleText("May");
+        new Select(day1).selectByVisibleText("10");
+
+        //Service class
+        driver.findElements(By.xpath("//input[@name='servClass']")).get(2).click();
+
+        //Airline
+        WebElement prefrence = driver.findElement(By.name("airline"));
+        new Select(prefrence).selectByVisibleText("Unified Airlines");
+
+
+        //continue button
+        driver.findElement(By.name("findFlights")).submit();
+
+        //Depart to
+        driver.findElements(By.name("outFlight")).get(2).click();
+        //Arrive to
+        driver.findElements(By.name("outFlight")).get(2).click();
+
+        //continue button clicked
+        driver.findElement(By.name("reserveFlights")).submit();
+
+        try {
+            // Making the test fail
+            Assert.assertEquals(depart.getAttribute("value"), arrive.getAttribute("value"));
+
+        } catch(StaleElementReferenceException e){
+
+            depart = driver.findElement(By.name("fromPort"));
+            arrive = driver.findElement(By.name("toPort"));
+            System.out.println(depart.getAttribute("value"));
+            System.out.println(arrive.getAttribute("value"));
+            Assert.assertNotEquals(depart.getAttribute("value"), arrive.getAttribute("value"));
+
+
+            // Following lines will be printed when the assert condition fails
+            System.out.println("test case");
+            System.out.println("Error message: " + e.toString());
+        }
+
+
+        // Book a fight
+        //driver.findElement(By.xpath("//font"))
+        driver.findElement(By.name("passFirst0")).sendKeys("Pallavi");
+        driver.findElement(By.name("passLast0")).sendKeys("Tripathi");
+        WebElement meal = driver.findElement(By.name("pass.0.meal"));
+        new Select(meal).selectByVisibleText("Vegetarian");
+        WebElement cardtype = driver.findElement(By.name("creditCard"));
+        new Select(cardtype).selectByVisibleText("Visa");
+        driver.findElement(By.name("creditnumber")).sendKeys("123456789");
+        WebElement expmnth = driver.findElement(By.name("cc_exp_dt_mn"));
+        new Select(expmnth).selectByVisibleText("02");
+        WebElement expyear = driver.findElement(By.name("cc_exp_dt_yr"));
+        new Select(expyear).selectByVisibleText("2010");
+        driver.findElement(By.name("cc_frst_name")).sendKeys("paul");
+        driver.findElement(By.name("cc_mid_name")).sendKeys("pt");
+        driver.findElement(By.name("cc_last_name")).sendKeys("tri");
+        driver.findElement(By.name("ticketLess")).click();
+        driver.findElement(By.name("billAddress1")).sendKeys("noida");
+        driver.findElement(By.name("billCity")).sendKeys("Delhi");
+        driver.findElement(By.name("billState")).sendKeys("Delhi");
+        driver.findElement(By.name("billZip")).sendKeys("110092");
+        WebElement Billcountry=driver.findElement(By.name("billCountry"));
+        new Select(Billcountry).selectByVisibleText("UNITED STATES");
+
+        driver.findElement(By.name("delAddress1")).sendKeys("noida");
+        driver.findElement(By.name("delCity")).sendKeys("Delhi");
+        driver.findElement(By.name("delState")).sendKeys("Delhi");
+        driver.findElement(By.name("delZip")).sendKeys("110092");
+        WebElement delcountry=driver.findElement(By.name("delCountry"));
+        new Select(delcountry).selectByVisibleText("UNITED STATES");
+        try {
+            driver.findElement(By.name("buyFlights")).click();
+        }
+
+        catch (StaleElementReferenceException e) {
+
+            driver.findElement(By.name("buyFlights")).click();
+        }
+        driver.findElement(By.xpath("//img[@src='/images/forms/Logout.gif']")).click();
+
+        Thread.sleep(300);
+        System.out.println("end to end end ");
+
+    }
+
+
+//******Departure and arrival city are same
+        @Test(description = "departure and arival city negative test case",dependsOnMethods = {"login"},priority = 2)
+        public void city() throws InterruptedException {
+            driver.findElements(By.name("tripType")).get(0).click();
+            //Passengers
+            WebElement passengers = driver.findElement(By.name("passCount"));
+            Select selectpassenger = new Select(passengers);
+            selectpassenger.selectByVisibleText("1");
+
+            //Departing
+
+            WebElement depart = driver.findElement(By.name("fromPort"));
+            Select departdrop = new Select(depart);
+
+            departdrop.selectByVisibleText("London");
+
+            //departing(date)
+            WebElement month = driver.findElement(By.name("fromMonth"));
+            WebElement day = driver.findElement(By.name("fromDay"));
+            new Select(month).selectByVisibleText("May");
+            new Select(day).selectByVisibleText("2");
+
+
+            // ARRIVING IN
+            WebElement arrive = driver.findElement(By.name("toPort"));
+            new Select(arrive).selectByVisibleText("London");
+
+            //Returning date
+            WebElement month1 = driver.findElement(By.name("toMonth"));
+            WebElement day1 = driver.findElement(By.name("toDay"));
+            new Select(month1).selectByVisibleText("May");
+            new Select(day1).selectByVisibleText("10");
+
+            //Service class
+            driver.findElements(By.xpath("//input[@name='servClass']")).get(2).click();
+
+            //Airline
+            WebElement prefrence = driver.findElement(By.name("airline"));
+            new Select(prefrence).selectByVisibleText("Unified Airlines");
+
+
+            //continue button
+            driver.findElement(By.name("findFlights")).submit();
+
+            //Depart to
+            driver.findElements(By.name("outFlight")).get(2).click();
+            //Arrive to
+            driver.findElements(By.name("outFlight")).get(2).click();
+
+            //continue button clicked
+            driver.findElement(By.name("reserveFlights")).submit();
+
+            try {
+                // Making the test fail
+                Assert.assertEquals(depart.getAttribute("value"), arrive.getAttribute("value"));
+
+            } catch (StaleElementReferenceException e) {
+
+                depart = driver.findElement(By.name("fromPort"));
+                arrive = driver.findElement(By.name("toPort"));
+                System.out.println(depart.getAttribute("value"));
+                System.out.println(arrive.getAttribute("value"));
+                Assert.assertNotEquals(depart.getAttribute("value"), arrive.getAttribute("value"));
+
+
+                // Following lines will be printed when the assert condition fails
+                System.out.println("test case");
+                System.out.println("Error message: " + e.toString());
+
+                Thread.sleep(300);
+                System.out.println("city end ");
+            }
+        }
+//        departure date less than arrival date test case
+    @Test(description = "Departure date should be less than arrival date ",dependsOnMethods = {"login"} ,priority = 3)
+    public void date() throws InterruptedException {
+        driver.findElement(By.xpath("//input[@value='roundtrip']")).click();
+        //Passengers
+        WebElement passengers = driver.findElement(By.name("passCount"));
+        Select selectpassenger = new Select(passengers);
+        selectpassenger.selectByVisibleText("1");
+
+        //Departing
+
+        WebElement depart = driver.findElement(By.name("fromPort"));
+        Select departdrop = new Select(depart);
+
+        departdrop.selectByVisibleText("Acapulco");
+
+        //departing(date)
+        WebElement month = driver.findElement(By.name("fromMonth"));
+        WebElement day = driver.findElement(By.name("fromDay"));
+        new Select(month).selectByVisibleText("May");
+        new Select(day).selectByVisibleText("2");
+
+        String month_depart = month.getAttribute("value");
+        String day_depart = day.getAttribute("value");
+
+        // ARRIVING IN
+        WebElement arrive = driver.findElement(By.name("toPort"));
+        new Select(arrive).selectByVisibleText("London");
+
+        //Returning date
+        WebElement month1 = driver.findElement(By.name("toMonth"));
+        WebElement day1 = driver.findElement(By.name("toDay"));
+        new Select(month1).selectByVisibleText("May");
+        new Select(day1).selectByVisibleText("2");
+
+        String month_arrive = month.getAttribute("value");
+        String day_arrive = day.getAttribute("value");
+        //Service class
+        driver.findElements(By.xpath("//input[@name='servClass']")).get(2).click();
+
+        //Airline
+        WebElement prefrence = driver.findElement(By.name("airline"));
+        new Select(prefrence).selectByVisibleText("Unified Airlines");
+
+
+        //continue button
+        driver.findElement(By.name("findFlights")).submit();
+
+        //Depart to
+        driver.findElements(By.name("outFlight")).get(2).click();
+        //Arrive to
+        driver.findElements(By.name("inFlight")).get(2).click();
+
+        //continue button clicked
+        driver.findElement(By.name("reserveFlights")).submit();
+
+        String act_url = driver.getCurrentUrl();
+        String Exp_url = "http://newtours.demoaut.com/mercuryreservation.php";
+        Assert.assertEquals(act_url, Exp_url);
+
+    }
+
+
+
+// empty passenger detail test case
+
+    @Test(description = "empty passengers field",dependsOnMethods = {"login"},priority = 4)
+
+    public void book_flight() throws IOException, InterruptedException {
+        driver.findElements(By.name("tripType")).get(0).click();
+        //Passengers
+        WebElement passengers = driver.findElement(By.name("passCount"));
+        Select selectpassenger = new Select(passengers);
+        selectpassenger.selectByVisibleText("1");
+
+        //Departing
+
+        WebElement depart = driver.findElement(By.name("fromPort"));
+        Select departdrop = new Select(depart);
+
+        departdrop.selectByVisibleText("Acapulco");
+
+        //departing(date)
+        WebElement month = driver.findElement(By.name("fromMonth"));
+        WebElement day = driver.findElement(By.name("fromDay"));
+        new Select(month).selectByVisibleText("May");
+        new Select(day).selectByVisibleText("2");
+
+
+        // ARRIVING IN
+        WebElement arrive = driver.findElement(By.name("toPort"));
+        new Select(arrive).selectByVisibleText("London");
+
+        //Returning date
+        WebElement month1 = driver.findElement(By.name("toMonth"));
+        WebElement day1 = driver.findElement(By.name("toDay"));
+        new Select(month1).selectByVisibleText("May");
+        new Select(day1).selectByVisibleText("10");
+
+        //Service class
+        driver.findElements(By.xpath("//input[@name='servClass']")).get(2).click();
+
+        //Airline
+        WebElement prefrence = driver.findElement(By.name("airline"));
+        new Select(prefrence).selectByVisibleText("Unified Airlines");
+
+
+        //continue button
+        driver.findElement(By.name("findFlights")).submit();
+
+        //Depart to
+        driver.findElements(By.name("outFlight")).get(2).click();
+        //Arrive to
+        driver.findElements(By.name("outFlight")).get(2).click();
+
+        //continue button clicked
+        driver.findElement(By.name("reserveFlights")).submit();
+
+
+        // Book a fight
+
+        try {
+            driver.findElement(By.name("buyFlights")).click();
+        }
+
+        catch (StaleElementReferenceException e) {
+
+            driver.findElement(By.name("buyFlights")).click();
+        }
+
+        String expected_result=driver.getCurrentUrl();
+
+        String actual_result = "http://newtours.demoaut.com/mercurypurchase.php";
+
+
+        Assert.assertEquals(expected_result,actual_result);
+
+
+        Thread.sleep(300);
+        System.out.println("last end");
+
+    }
+
+
+
+}
+
