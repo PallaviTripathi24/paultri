@@ -24,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Live_automaton/Registration.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+            <state relative-caret-position="-2655">
+              <caret line="3" column="58" lean-forward="true" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
             </state>
           </provider>
         </entry>
@@ -75,7 +75,7 @@
       </MavenImportingSettings>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="77" />
     <option name="y" value="47" />
     <option name="width" value="1161" />
@@ -144,7 +144,7 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552890801660" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1552892126371" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -167,7 +167,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="TestNG.Registration">
+  <component name="RunManager" selected="TestNG.Registration.city">
     <configuration name="Registration" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="Live_Automation" />
       <extension name="coverage">
@@ -285,10 +285,10 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="TestNG.Registration" />
-        <item itemvalue="TestNG.Registration.login" />
-        <item itemvalue="TestNG.Registration.date" />
         <item itemvalue="TestNG.Registration.city" />
+        <item itemvalue="TestNG.Registration.login" />
+        <item itemvalue="TestNG.Registration" />
+        <item itemvalue="TestNG.Registration.date" />
         <item itemvalue="TestNG.Registration.Registration" />
       </list>
     </recent_temporary>
@@ -307,21 +307,6 @@
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="Registration_date - 2019.03.18 at 11h 17m 39s.xml">
-      <configuration name="Registration.date" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_date - 2019.03.18 at 11h 20m 16s.xml">
-      <configuration name="Registration.date" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_date - 2019.03.18 at 11h 36m 41s.xml">
-      <configuration name="Registration.date" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration_flightFind - 2019.03.18 at 11h 44m 27s.xml">
-      <configuration name="Registration.flightFind" configurationId="TestNG" />
-    </history-entry>
-    <history-entry file="Registration - 2019.03.18 at 11h 49m 49s.xml">
-      <configuration name="Registration" configurationId="TestNG" />
-    </history-entry>
     <history-entry file="Registration_Registration - 2019.03.18 at 11h 50m 29s.xml">
       <configuration name="Registration.Registration" configurationId="TestNG" />
     </history-entry>
@@ -335,6 +320,21 @@
       <configuration name="Registration.date" configurationId="TestNG" />
     </history-entry>
     <history-entry file="Registration_login - 2019.03.18 at 11h 56m 59s.xml">
+      <configuration name="Registration.login" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration - 2019.03.18 at 12h 00m 51s.xml">
+      <configuration name="Registration" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration - 2019.03.18 at 12h 14m 05s.xml">
+      <configuration name="Registration" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_city - 2019.03.18 at 12h 15m 53s.xml">
+      <configuration name="Registration.city" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration - 2019.03.18 at 12h 24m 25s.xml">
+      <configuration name="Registration" configurationId="TestNG" />
+    </history-entry>
+    <history-entry file="Registration_login - 2019.03.18 at 12h 25m 09s.xml">
       <configuration name="Registration.login" configurationId="TestNG" />
     </history-entry>
   </component>
@@ -356,7 +356,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Terminal" order="7" />
+      <window_info anchor="bottom" id="Terminal" order="7" weight="0.32954547" />
       <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32954547" />
@@ -381,7 +381,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/src/test/java/Live_automaton/Registration.java</url>
-          <line>260</line>
+          <line>263</line>
           <properties class="Live_automaton.Registration" method="date">
             <option name="EMULATED" value="true" />
           </properties>
@@ -414,8 +414,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Live_automaton/Registration.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="105">
-          <caret line="7" column="45" lean-forward="true" selection-start-line="7" selection-start-column="45" selection-end-line="7" selection-end-column="45" />
+        <state relative-caret-position="-2655">
+          <caret line="3" column="58" lean-forward="true" selection-start-line="3" selection-start-column="58" selection-end-line="3" selection-end-column="58" />
         </state>
       </provider>
     </entry>
